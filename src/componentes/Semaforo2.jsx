@@ -2,14 +2,20 @@ import {useState} from 'react';
 
 function Semaforo2(props){
 
+    //Inicializa el estado, con un objeto con las propiedades rojo, amarillo y verde, con valor 0
     const [botones, setBotones] = useState({rojo:0,
                                             amarillo:0,
                                             verde:0});
 
+    //Función que incrementa el contador del color seleccionado
     function incrementar(event){
+        //Obtiene el color seleccionado(dependiendo del id del botón)
         let color = event.target.id;
+
+        //Incrementa el contador del color seleccionado
         switch(color){
             case 'rojo':
+                //Incrementa el contador del color rojo
                 setBotones({...botones, rojo: botones.rojo + 1});
                 break;
             case 'amarillo':

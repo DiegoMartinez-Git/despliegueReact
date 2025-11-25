@@ -13,6 +13,7 @@ function ContadorR(props) {
         switch(action.type){
             case ACCIONES.INCREMENTAR:
                 return {contador: state.contador + 1,
+                        //Añade el click a la lista de clicks(usando ...state.clicks, que es una copia del array)
                         clicks: [...state.clicks, 'i']};
             case ACCIONES.DECREMENTAR:
                     return {contador: state.contador - 1,

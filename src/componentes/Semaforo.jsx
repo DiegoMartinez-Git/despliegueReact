@@ -1,15 +1,17 @@
 import {useState} from 'react';
 
 function Semaforo(props){
+    //Inicializa el estado con useState valor 0
     const [rojo, setRojo] = useState(0)
     const [amarillo, setAmarillo] = useState(0)
     const [verde, setVerde] = useState(0)
 
-    function incrementarRojo(event){
-        console.log(event)
+    //Función que incrementa el contador del color rojo
+    function incrementarRojo(){
         setRojo(rojo + 1);
     }
 
+    //Función que incrementa el contador del color amarillo
     function incrementarAmarillo(){
         setAmarillo(amarillo + 1);
     }
@@ -18,8 +20,10 @@ function Semaforo(props){
         setVerde(verde + 1);
     }
 
+    //Calcula el total de clicks
     let clicksTotal = rojo + amarillo + verde;
 
+    //Calcula el porcentaje de cada color
     const porcentajeRojo = Math.round((rojo / clicksTotal) * 100) || 0;
     const porcentajeAmarillo = Math.round((amarillo / clicksTotal) * 100) || 0;
     const porcentajeVerde = Math.round((verde / clicksTotal) * 100) || 0;

@@ -1,26 +1,31 @@
 import {useReducer, useState} from 'react';
 
 function SemaforoReduce() {
-
+    //Contanyes con las acciones(Rojo aumenta el numero de rojos y así)
     const ACCIONES = {
         ROJO: 'rojo',
         VERDE: 'verde',
         AMARILLO: 'amarillo'
     }
 
-    function reducer(state, action){
+    //Función para necesaria cuando usas useReducer
+    function reducer(state, action){//state y action son los parámetros que recibe la función por defecto
 
+        //Switch para gestionar las acciones
         switch(action.type){
             case ACCIONES.ROJO:
+                //Devuelve un nuevo estado(en este caso aumenta el número de rojos)
                 return {...state, rojo : state.rojo + 1}
             case ACCIONES.AMARILLO:
+                //Devuelve un nuevo estado(en este caso aumenta el número de amarillos)
                 return {...state, amarillo : state.amarillo + 1}
             case ACCIONES.VERDE:
+                //Devuelve un nuevo estado(en este caso aumenta el número de verdes)
                 return {...state,verde : state.verde + 1}
             default: return state;  
         }
     }
-    
+    //Inicializa el estado
     const [estado, setEstado] = useReducer(reducer, {rojo:0, amarillo:0, verde:0})
 
     function incrementar(event){
@@ -28,6 +33,7 @@ function SemaforoReduce() {
 
         switch(color){
             case 'rojo':
+                //Llama a la función reducer con el estado actual y la acción
                 setEstado({type:ACCIONES.ROJO})
                 break
             
@@ -40,14 +46,16 @@ function SemaforoReduce() {
                 break
         }
     }
-
+    
+    //Calcula el total de clicks
     const TOTALCLICKS = estado.rojo + estado.amarillo + estado.verde
-
+    
+    //Calcula el porcentaje de cada color, si es undefied, NaN o Null, se muestra 0
     const porcentajeRojo = Math.round((estado.rojo / TOTALCLICKS)*100) || 0
     const porcentajeAmarillo = Math.round((estado.amarillo / TOTALCLICKS)*100)|| 0
     const porcentajeVerde = Math.round((estado.verde / TOTALCLICKS)*100) || 0
 
-
+    
     return(
         <div>
             <h1>Semaforo usando reducer</h1>
