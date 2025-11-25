@@ -43,12 +43,15 @@
 
 #rojo{
   background-color: red;
+  margin: 2px;
 }
 
 #amarillo{
   background-color: yellow;
+  margin: 2px;
 }
 
 #verde{
   background-color: green;
+  margin: 2px;
 }

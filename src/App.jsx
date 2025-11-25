@@ -4,6 +4,7 @@ import Contador2 from './componentes/Contador2';
 import ContadorR from './componentes/ContadorR';
 import Semaforo from './componentes/Semaforo';
 import Semaforo2 from './componentes/Semaforo2';
+import SemaforoReduce from './componentes/SemaforoReduce';
 
 function App() {
   let contador = 0;
@@ -12,7 +13,8 @@ function App() {
       {/*<Contador contador= {contador}></Contador>*/}
       {/*<Contador2></Contador2>*/}
       {/*<Semaforo2></Semaforo2>*/}
-      <ContadorR contador={contador}></ContadorR>
+      {/*<ContadorR contador={contador}></ContadorR>*/}
+      <SemaforoReduce></SemaforoReduce>
     </div>
   )
 }
