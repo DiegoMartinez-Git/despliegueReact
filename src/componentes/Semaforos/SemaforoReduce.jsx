@@ -17,10 +17,8 @@ function SemaforoReduce() {
                 //Devuelve un nuevo estado(en este caso aumenta el número de rojos)
                 return {...state, rojo : state.rojo + 1}
             case ACCIONES.AMARILLO:
-                //Devuelve un nuevo estado(en este caso aumenta el número de amarillos)
                 return {...state, amarillo : state.amarillo + 1}
             case ACCIONES.VERDE:
-                //Devuelve un nuevo estado(en este caso aumenta el número de verdes)
                 return {...state,verde : state.verde + 1}
             default: return state;  
         }
