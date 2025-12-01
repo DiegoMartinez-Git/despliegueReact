@@ -58,9 +58,14 @@
   margin: 2px;
 }
 
+.verde, .rojo, .amarillo{
+  width: 160px;
+  height: 120px;
+  margin: 10px;
+}
+
 .verde{
   background-color: green;
-
 }
 
 .rojo{
@@ -69,4 +74,16 @@
 
 .amarillo{
   background-color: yellow;
+  color: black;
 }
+
+button{
+  width: 150px;
+  height: 100px;
+  margin: 10px;
+  border-radius: 8px;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+

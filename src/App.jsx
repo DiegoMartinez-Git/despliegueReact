@@ -1,4 +1,6 @@
 import './App.css'
+//-----------------COMPONENTES-----------------
+import BarraHerramientas from './componentes/BotonesTemas/BarraHerramientas';
 import Contador from './componentes/Contadores/Contador'
 import Contador2 from './componentes/Contadores/Contador2';
 import ContadorR from './componentes/Contadores/ContadorR';
@@ -8,9 +10,20 @@ import Segundero from './componentes/Segundero/Segundero';
 import Semaforo from './componentes/Semaforos/Semaforo';
 import Semaforo2 from './componentes/Semaforos/Semaforo2';
 import SemaforoReduce from './componentes/Semaforos/SemaforoReduce';
+import ListadoCoches from './componentes/Coches/ListadoCoches';
+
+
+//-----------------CONTEXTOS-----------------
+import TemaContext from './contextos/TemaContext';
+
+//-----------------MOCKS-----------------
+import temas from './mocks/mock-temas';
+import losCoches from './mocks/mock-coches';
 
 function App() {
   let contador = 0;
+  let value;
+
   return (
     <div>
       {/*<Contador contador= {contador}></Contador>*/}
@@ -21,7 +34,13 @@ function App() {
       {/*<IzquierdaDerecha></IzquierdaDerecha>*/}
       {/*Para poner un numero tiene que ser entre llaves*/}
       {/*<Segundero contador = {0}></Segundero>*/}
-      <Reloj></Reloj>
+      {/*<Reloj></Reloj>*/}
+      {/*<TemaContext.Provider value={temas.light}>
+        <BarraHerramientas></BarraHerramientas>
+      </TemaContext.Provider>*/}
+      <ListadoCoches todosLosCoches={losCoches}></ListadoCoches>
+
+      
     </div>
   )
 }

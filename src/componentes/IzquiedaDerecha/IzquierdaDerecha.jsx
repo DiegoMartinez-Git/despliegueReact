@@ -5,7 +5,7 @@ export default function IzquierdaDerecha(props){
     
     const botonera = [{
         texto: "LeftUp",
-        valor: 2
+        valor: 0
     },{
         texto: "LeftDown",
         valor: 0
