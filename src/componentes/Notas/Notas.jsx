@@ -3,6 +3,7 @@ import { useState } from 'react';
 //Importacion de los componentes MostrarNotas y BotonNotas
 import MostrarNotas from './MostrarNotas';
 import BotonNotas from './BotonNotas'
+import NotaForm from './NotaForm';
 
 //Funcion con un parametro(el parametro será la lista la lista entera(mock-notas))
 export default function Notas({ notasIniciales }) {
@@ -38,7 +39,7 @@ export default function Notas({ notasIniciales }) {
              * notas, ya sean filtradas o no(usando la variable notasFiltradas)
              */}
             <MostrarNotas notas={notasFiltradas} />
-            
+            <NotaForm></NotaForm>
         </div>
     );
 }
