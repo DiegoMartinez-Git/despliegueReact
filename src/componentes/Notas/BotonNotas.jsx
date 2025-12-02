@@ -1,13 +1,10 @@
-export default function BotonNotas(props){
-    //Las props nos daran el mock de notas
-    function mostrarImportantes(notas){
-        console.log(notas)
-    }
-    return(
-        <>
-            <button onClick={mostrarImportantes(props.todasLasNotas)}>Mostar importantes</button>
-        </>
-        
-        
-    )
+export default function BotonFiltro({ activo, alClickar }) {
+    return (
+
+        //Devuelve un boton que al clickar llama a la funcion alClickar
+        //Si activo es true, el texto del boton será 'Mostrar Todos', si no, será 'Mostrar importantes'
+        <button onClick={alClickar}>
+            {activo ? 'Mostrar Todos' : 'Mostrar importantes'}
+        </button>
+    );
 }

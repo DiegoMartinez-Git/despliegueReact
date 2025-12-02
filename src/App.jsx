@@ -46,7 +46,7 @@ function App() {
       <ListadoCoches todosLosCoches={losCoches}></ListadoCoches>
       
       <ListadoMisTemas todosLosTemas={losTemas}></ListadoMisTemas>
-      <Notas todasLasNotas={lasNotas}></Notas>
+      <Notas notasIniciales={lasNotas}></Notas>
       
     </div>
   )
