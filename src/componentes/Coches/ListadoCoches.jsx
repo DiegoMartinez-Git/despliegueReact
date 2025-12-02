@@ -22,5 +22,4 @@ export default function ListadoCoches(props){
             </tbody>
         </table>
     )
-
 }

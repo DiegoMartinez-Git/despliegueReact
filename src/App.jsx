@@ -19,6 +19,11 @@ import TemaContext from './contextos/TemaContext';
 //-----------------MOCKS-----------------
 import temas from './mocks/mock-temas';
 import losCoches from './mocks/mock-coches';
+import losTemas from './mocks/mock-misTemas';
+import lasNotas from './mocks/mock-notas'
+import ListadoMisTemas from './componentes/ListaTemas/ListaMisTemas';
+import Notas from './componentes/Notas/Notas';
+
 
 function App() {
   let contador = 0;
@@ -39,7 +44,9 @@ function App() {
         <BarraHerramientas></BarraHerramientas>
       </TemaContext.Provider>*/}
       <ListadoCoches todosLosCoches={losCoches}></ListadoCoches>
-
+      
+      <ListadoMisTemas todosLosTemas={losTemas}></ListadoMisTemas>
+      <Notas todasLasNotas={lasNotas}></Notas>
       
     </div>
   )
