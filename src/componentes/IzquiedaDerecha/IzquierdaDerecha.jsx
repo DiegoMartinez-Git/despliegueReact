@@ -1,22 +1,10 @@
 import { useReducer } from "react"
+import botonera from '../../mocks/mock-botones'
 
-export default function IzquierdaDerecha(props){
+export default function IzquierdaDerecha(){
 
     
-    const botonera = [{
-        texto: "LeftUp",
-        valor: 0
-    },{
-        texto: "LeftDown",
-        valor: 0
-    },{
-        texto: "RightUp",
-        valor: 0
-    },{
-        texto: "RightDown",
-        valor: 0
-
-    }]
+    
 
     function reducer(estado, accion){
         switch(accion.type){
@@ -29,14 +17,14 @@ export default function IzquierdaDerecha(props){
                 }))
             case 'LEFTDOWN':
                 return(estado.map((boton, index) => {
-                    if(index === 1){
+                    if(index === 2){
                         return {...boton, valor: boton.valor + 1}
                     }
                     return boton;
                 }))
             case 'RIGHTUP':
                 return(estado.map((boton, index) => {
-                    if(index === 2){
+                    if(index === 1){
                         console.log(boton)
                         return {...boton, valor: boton.valor + 1}
                     }
@@ -58,6 +46,7 @@ export default function IzquierdaDerecha(props){
 
     function incrementar(event){
         let boton = event.target.id;
+        console.log(boton)
         
 
         switch(boton){
@@ -65,10 +54,10 @@ export default function IzquierdaDerecha(props){
                 setEstado({type: 'LEFTUP'})
                 break;
             case 'RightUp':
-                setEstado({type: 'LEFTDOWN'})
+                setEstado({type: 'RIGHTUP'})
                 break;
             case 'LeftDown':
-                setEstado({type: 'RIGHTUP'})
+                setEstado({type: 'LEFTDOWN'})
                 break;
             case 'RightDown':
                 setEstado({type: 'RIGHTDOWN'})
@@ -100,11 +89,12 @@ export default function IzquierdaDerecha(props){
 
     return(
         <div>
-            <button id="LeftUp" className={ParImparPrimo(estado[0].valor)} onClick={incrementar}>LeftUp - {estado[0].valor}</button>
-            <button id="RightUp" className={ParImparPrimo(estado[1].valor)} onClick={incrementar}>RightUp - {estado[1].valor}</button>
-            <br/>
-            <button id="LeftDown"  className={ParImparPrimo(estado[2].valor)} onClick={incrementar}> LeftDown - {estado[2].valor}</button>
-            <button id="RightDown" className={ParImparPrimo(estado[3].valor)} onClick={incrementar}>RightDown - {estado[3].valor}</button>
+            {estado.map((value,index) => {
+                if (index === 1) {
+                    return <><button id={value.texto} className={ParImparPrimo(value.valor)} onClick={incrementar}>{value.texto} - {value.valor}</button> <br/></>
+                }else
+                    return <button id={value.texto} className={ParImparPrimo(value.valor)} onClick={incrementar}>{value.texto} - {value.valor}</button>
+})}
         </div>
     )
 }

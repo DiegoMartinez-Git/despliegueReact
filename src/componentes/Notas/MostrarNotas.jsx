@@ -13,7 +13,7 @@ export default function MostrarNotas({ notas }) {
                      * y ademas lo pinta de rojo
                      */}
                     {nota.importante && (
-                        <span style={{ color: 'red', marginLeft: '5px' }}>
+                        <span style={{ color: 'red'}}>
                             (importante)
                         </span>
                     )}

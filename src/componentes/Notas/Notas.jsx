@@ -31,8 +31,7 @@ export default function Notas({ notasIniciales }) {
              */}
             <BotonNotas
                 activo={estado} 
-                alClickar={cambiarEstado} 
-            />
+                alClickar={cambiarEstado}/>
 
             {/**
              * Llama al componente MostrarNotas donde se le pasa el parametro con las 

@@ -23,6 +23,7 @@ import losTemas from './mocks/mock-misTemas';
 import lasNotas from './mocks/mock-notas'
 import ListadoMisTemas from './componentes/ListaTemas/ListaMisTemas';
 import Notas from './componentes/Notas/Notas';
+import GestionarTabla from './componentes/TablaLista/GestionarTabla';
 
 
 function App() {
@@ -43,10 +44,11 @@ function App() {
       {/*<TemaContext.Provider value={temas.light}>
         <BarraHerramientas></BarraHerramientas>
       </TemaContext.Provider>*/}
-      <ListadoCoches todosLosCoches={losCoches}></ListadoCoches>
+      {/*<ListadoCoches todosLosCoches={losCoches}></ListadoCoches>
       
       <ListadoMisTemas todosLosTemas={losTemas}></ListadoMisTemas>
-      <Notas notasIniciales={lasNotas}></Notas>
+      <Notas notasIniciales={lasNotas}></Notas>*/}
+      <GestionarTabla></GestionarTabla>
       
     </div>
   )

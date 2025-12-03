@@ -7,8 +7,6 @@ export default function NombreLista(props){
 
     return(
             <li>{props.tema.name}</li>
-
-
     )
 
 }
