@@ -25,11 +25,28 @@ import ListadoMisTemas from './componentes/ListaTemas/ListaMisTemas';
 import Notas from './componentes/Notas/Notas';
 import GestionarTabla from './componentes/TablaLista/GestionarTabla';
 import CocheForm from './componentes/CocheForm/CocheForm';
+import { useState } from 'react';
 
 
 function App() {
-  let contador = 0;
-  let value;
+  const [listaCoches, setListaCoches] = useState(losCoches)
+
+  //Recibe un coche y lo añade a la lista de coches
+  function manejarFormulario(coche){
+    setListaCoches([...listaCoches, coche])
+  }
+
+  function validarMatricula(matricula){
+
+    const matriculas = listaCoches.map((coche)=> coche.matricula)
+    console.log(matriculas)
+
+    const EXISTE = matriculas.includes(matricula)
+
+    console.log(EXISTE)
+
+    
+  }
 
   return (
     <div>
@@ -45,8 +62,13 @@ function App() {
       {/*<TemaContext.Provider value={temas.light}>
         <BarraHerramientas></BarraHerramientas>
       </TemaContext.Provider>*/}
-      <ListadoCoches todosLosCoches={losCoches}></ListadoCoches>
-      <CocheForm></CocheForm>
+      <ListadoCoches todosLosCoches={listaCoches}></ListadoCoches>
+
+      {/**
+       * Recibe la funcion por props(parametro y la ejecuta en el handle
+       */}
+      <CocheForm manejarFormulario = {manejarFormulario}
+                  validarMatricula={validarMatricula}></CocheForm>
       
       {/* <ListadoMisTemas todosLosTemas={losTemas}></ListadoMisTemas>
       <Notas notasIniciales={lasNotas}></Notas> */}
