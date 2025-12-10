@@ -24,6 +24,7 @@ import lasNotas from './mocks/mock-notas'
 import ListadoMisTemas from './componentes/ListaTemas/ListaMisTemas';
 import Notas from './componentes/Notas/Notas';
 import GestionarTabla from './componentes/TablaLista/GestionarTabla';
+import CocheForm from './componentes/CocheForm/CocheForm';
 
 
 function App() {
@@ -44,11 +45,12 @@ function App() {
       {/*<TemaContext.Provider value={temas.light}>
         <BarraHerramientas></BarraHerramientas>
       </TemaContext.Provider>*/}
-      {/*<ListadoCoches todosLosCoches={losCoches}></ListadoCoches>
+      <ListadoCoches todosLosCoches={losCoches}></ListadoCoches>
+      <CocheForm></CocheForm>
       
-      <ListadoMisTemas todosLosTemas={losTemas}></ListadoMisTemas>
-      <Notas notasIniciales={lasNotas}></Notas>*/}
-      <GestionarTabla></GestionarTabla>
+      {/* <ListadoMisTemas todosLosTemas={losTemas}></ListadoMisTemas>
+      <Notas notasIniciales={lasNotas}></Notas> */}
+      {/* <GestionarTabla></GestionarTabla> */}
       
     </div>
   )

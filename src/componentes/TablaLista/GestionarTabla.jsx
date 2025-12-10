@@ -16,11 +16,16 @@ export default function GestionarTabla(){
         console.log(Datos)
     }
 
+    function Resetear(){
+        setEstado({estado:0})
+    }
+
     return(
         <>
             <button onClick={mostrarTabla}>Mostrar tabla</button>
             <button onClick={mostrarLista}>Mostrar lista</button>
-
+            <button onClick={Resetear}>Resetear</button>
+            
             {estado.estado === 1 && <DatosTabla datos={Datos}/>}
             {estado.estado === 2 && <DatosLista datos={Datos}/>}
         
